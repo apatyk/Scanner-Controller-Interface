@@ -1,1 +1,1 @@
-# DatalogicScannerInterface
+# Datalogic Barcode Scanner Interface
