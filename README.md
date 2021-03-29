@@ -8,4 +8,4 @@ To use, got to File > Search to start polling the COM port for data. The program
 
 ## Note
 
-`COM` port will need to be changed in code (`SerialInterface.cpp `) (e.g. `COM9`)
+`COM` port will need to be changed in code (`SerialInterface.cpp`) (e.g. `COM9`).
