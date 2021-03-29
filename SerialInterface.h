@@ -4,6 +4,8 @@
 #include <Windows.h>
 #include <Mmsystem.h>
 
+#define MAX_LEN 32
+#define CODE_LEN 16
 
 class SerialInterface {
 public:
