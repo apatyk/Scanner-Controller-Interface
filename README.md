@@ -1,4 +1,4 @@
-# Datalogic Barcode Scanner Interface
+# Barcode Scanner Controller Interface
 
 This code is designed to interface with the Awoo SCB-100 scanner controller via serial port. Code is designed in C/C++ for Windows.
 
