@@ -51,7 +51,7 @@ void SerialInterface::readBarcodeScanner(void)
 			SerialNumber[i] = SerialPortBuffer[i + 1];
 		// convert from unsigned char string to wide string (ASCII --> unicode)
 		mbstowcs_s(NULL, DisplayNumber, BarcodeLength, (const char*)SerialNumber, MAX_LEN);
-		MessageBox(NULL, DisplayNumber, L"Serial Number Read", MB_OK | MB_APPLMODAL);
+		MessageBox(NULL, DisplayNumber, L"Serial Number", MB_OK | MB_APPLMODAL);
 	}
 
 	CloseHandle(hComm);

@@ -99,7 +99,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // Store instance handle in our global variable
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+      CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
@@ -126,15 +126,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
+	
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
+			HDC h = GetDC(hWnd);
             // Parse the menu selections:
             switch (wmId)
             {
 			case ID_FILE_SEARCH:
+				TextOut(h, 10, 10, L"Waiting for barcode...", (int)strlen("Waiting for barcode..."));
+				ReleaseDC(hWnd, h);
 				SerialInterface::getInstance().initBarcodeScanner();
 				SerialInterface::getInstance().readBarcodeScanner();
+				InvalidateRect(hWnd, NULL, TRUE);
 				break;
             case IDM_ABOUT:
                 DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
@@ -144,6 +149,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 break;
             default:
                 return DefWindowProc(hWnd, message, wParam, lParam);
+			ReleaseDC(hWnd, h);
             }
         }
         break;

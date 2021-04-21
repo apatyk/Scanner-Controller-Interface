@@ -4,7 +4,10 @@
 #include <Windows.h>
 #include <Mmsystem.h>
 
+// 23-digits for serialized sub-compoments
+// 15-digits for washing machines
 #define MAX_LEN 32
+// to account for space at the beginning of the code
 #define CODE_LEN 16
 
 class SerialInterface {
