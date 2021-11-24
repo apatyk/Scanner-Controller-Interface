@@ -4,7 +4,7 @@ This code is designed to interface with the Awoo SCB-100 scanner controller via 
 
 ## Usage
 
-To use, got to File > Search to start polling the desired COM port for data. The program will wait until data is presented on the COM port (program will be unresponsive). When the data is read, the serial number will be displayed in a message box after being converted from ASCII to Unicode. To scan another code, go to File > Search again.
+To use, go to File > Search to start polling the desired COM port for data. The program will wait until data is presented on the COM port (*program will be unresponsive*). When the data is read, the serial number will be displayed in a message box after being converted from ASCII to Unicode. To scan another code, go to File > Search again.
 
 ## Note
 
